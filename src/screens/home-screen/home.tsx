@@ -64,6 +64,7 @@ export const Home: FC = () => {
         <_View flex={1}>
           <FlatList
             data={cardsData}
+            contentContainerStyle={{marginTop: 10}}
             renderItem={({item}) => <HomeCard item={item} />}
           />
         </_View>

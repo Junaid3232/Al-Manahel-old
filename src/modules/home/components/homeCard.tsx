@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
     height: 75,
     justifyContent: 'center',
     borderRadius: 14,
-    borderColor: Color.GrayLite,
+    borderColor: Color.black + 30,
     borderWidth: 0.6,
     marginTop: 10,
   },
@@ -51,16 +51,17 @@ const styles = StyleSheet.create({
     color: Color.MediumLite,
     paddingRight: 20,
     lineHeight: 15,
+    marginTop: 3,
   },
   iconCont: {
     position: 'absolute',
-    right: -15,
+    right: -3,
     height: '100%',
     justifyContent: 'center',
   },
   iconStyles: {
     flexDirection: 'row',
-    padding: 20,
+    paddingHorizontal: 10,
     width: '90%',
   },
   userImage: {

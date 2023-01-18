@@ -36,7 +36,7 @@ export const HomeHeader: React.FC = () => {
 const styles = StyleSheet.create({
   headerContainer: {
     width: '100%',
-    height: 139,
+    height: 135,
     backgroundColor: Color.Primary,
   },
   appText: {
@@ -46,7 +46,8 @@ const styles = StyleSheet.create({
     fontWeight: '700',
   },
   iconStyles: {
-    padding: 20,
+    paddingTop: 13,
+    paddingLeft: 20,
     flexDirection: 'row',
     alignItems: 'center',
   },
