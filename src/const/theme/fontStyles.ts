@@ -1,25 +1,28 @@
 /** Project specific, define custom font */
-import { StyleSheet } from 'react-native';
+import {StyleSheet} from 'react-native';
 
 export type FontFamily =
-  | 'Raleway-Black'
-  | 'Raleway-Bold'
-  | 'Raleway-ExtraBold'
-  | 'Raleway-ExtraLight'
-  | 'Raleway-Light'
-  | 'Raleway-Medium'
-  | 'Raleway-Regular'
-  | 'Raleway-SemiBold'
-  | 'Raleway-Thin';
+  | 'Lato-Black'
+  | 'Lato-Bold'
+  | 'Lato-ExtraBold'
+  | 'Lato-ExtraLight'
+  | 'Lato-Light'
+  | 'Lato-Regular'
+  | 'Lato-Regular'
+  | 'Lato-SemiBold'
+  | 'Lato-Thin';
 
-export const DefaultFont: FontFamily = 'Raleway-Regular';
+export const DefaultFont: FontFamily = 'Lato-Regular';
 
-export const Fonts: Record<'regular' | 'medium' | 'bold' | 'thin' | 'semibold', FontFamily> = {
-  regular: 'Raleway-Regular',
-  bold: 'Raleway-Bold',
-  medium: 'Raleway-Medium',
-  thin: 'Raleway-Thin',
-  semibold: 'Raleway-SemiBold'
+export const Fonts: Record<
+  'regular' | 'medium' | 'bold' | 'thin' | 'semibold',
+  FontFamily
+> = {
+  regular: 'Lato-Regular',
+  bold: 'Lato-Bold',
+  medium: 'Lato-Regular',
+  thin: 'Lato-Thin',
+  semibold: 'Lato-SemiBold',
 };
 
 export const TextSizeStyles = StyleSheet.create({

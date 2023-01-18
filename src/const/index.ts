@@ -1,2 +1,2 @@
-export * from './Spacing'
-export * from './theme/colors'
+export * from './Spacing';
+export * from './theme/colors';

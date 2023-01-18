@@ -73,7 +73,7 @@ export const _Button: React.FC<Props> = ({
         )}
         <_Text
           size="base"
-          font="Raleway-Bold"
+          font="Lato-Bold"
           style={[textStyle, disabled && disabledTextStyle]}>
           {title}
         </_Text>
@@ -101,14 +101,6 @@ const styles = StyleSheet.create({
   },
   primary: {
     backgroundColor: Color.Primary,
-    shadowColor: '#000000',
-    shadowOffset: {
-      width: 0,
-      height: 3,
-    },
-    shadowOpacity: 0.17,
-    shadowRadius: 3.05,
-    elevation: 4,
   },
   primaryText: {
     color: Color.Negative,

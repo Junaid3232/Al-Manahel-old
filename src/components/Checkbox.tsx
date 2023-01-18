@@ -19,10 +19,14 @@ export const _Checkbox: React.FC<Props> = ({checked, text, onToggle}) => {
         <_View
           height={16}
           width={16}
+          justify="center"
           margins={{marginRight: Spacing.Med}}
           style={[styles.box, checked && styles.boxChecked]}>
           {checked && (
-            <_Text align="center" color={Color.Negative}>
+            <_Text
+              style={{alignSelf: 'center'}}
+              align="center"
+              color={Color.Negative}>
               &#x2713;
             </_Text>
           )}
@@ -42,10 +46,12 @@ export const _Checkbox: React.FC<Props> = ({checked, text, onToggle}) => {
 
 const styles = StyleSheet.create({
   box: {
-    borderRadius: 24,
+    borderRadius: 3,
     borderWidth: 1,
-    borderColor: Color.Primary,
+    borderColor: '#0D6EFD',
     backgroundColor: Color.PrimaryLight,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   boxChecked: {
     borderWidth: 0,

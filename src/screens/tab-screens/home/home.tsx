@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, {FC} from 'react';
 import {
   _Screen,
   _View,
@@ -8,17 +8,16 @@ import {
   _Checkbox,
   _Header,
 } from 'components';
-import { Background } from 'components';
-import { Color } from 'const';
-import { LineChartCard, CounterCards } from 'modules';
+import {Background} from 'components';
+import {Color} from 'const';
+import {LineChartCard, CounterCards} from 'modules';
 
-export const Home: FC = () => {
+export const Homed: FC = () => {
   return (
     <_Screen
       header={<_Header name={'Dashboard'} />}
       background={<Background color={Color.Gray} />}
-      hideTopSafeArea
-    >
+      hideTopSafeArea>
       <_View flex={1}>
         <CounterCards />
         <LineChartCard name={'Sells'} />

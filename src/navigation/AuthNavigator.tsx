@@ -7,15 +7,14 @@ export const AuthNavigator: FC = () => {
   const Stack = createNativeStackNavigator<RoutesRecord>();
   return (
     <Stack.Navigator
-      initialRouteName="boading-screen"
+      initialRouteName="company-code"
       screenOptions={{
         headerShown: false,
         gestureEnabled: false,
       }}>
-      <Stack.Screen name="boading-screen" component={screens.OnBoarding} />
-      <Stack.Screen name="welcome-screen" component={screens.Welcome} />
+      <Stack.Screen name="company-code" component={screens.CompanyCode} />
       <Stack.Screen name="login-screen" component={screens.Login} />
-      <Stack.Screen name="register-screen" component={screens.Register} />
+      <Stack.Screen name="code-verify-screen" component={screens.CodeVerfiy} />
     </Stack.Navigator>
   );
 };

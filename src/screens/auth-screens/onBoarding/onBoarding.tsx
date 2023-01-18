@@ -18,7 +18,7 @@ export const OnBoarding: FC = () => {
       onIndexChanged={index => setActiveIndex(index)}
       nextButton={
         <_View style={styles.nextButton}>
-          <_Text font="Raleway-Bold" color={Color.White} size="base">
+          <_Text font="Lato-Bold" color={Color.White} size="base">
             Next
           </_Text>
           <_Icon family="AntDesign" name="arrowright" />

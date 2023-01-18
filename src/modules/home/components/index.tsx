@@ -1,2 +1,2 @@
-export * from './CounterCards';
-export * from './LineChartCard';
+export * from './companyCard';
+export * from './homeCard';

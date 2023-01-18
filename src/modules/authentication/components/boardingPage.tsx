@@ -29,7 +29,7 @@ export const BoardingPage: FC<Props> = ({
         align={'center'}
         color={Color.Primary}
         size="lrg"
-        font="Raleway-Bold">
+        font="Lato-Bold">
         {title}
       </_Text>
       <_Text
@@ -38,7 +38,7 @@ export const BoardingPage: FC<Props> = ({
         align={'center'}
         color={Color.Gray}
         size="base"
-        font="Raleway-Medium">
+        font="Lato-Medium">
         {description}
       </_Text>
       {activeIndex !== 3 ? (

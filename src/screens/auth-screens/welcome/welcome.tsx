@@ -23,7 +23,7 @@ export const Welcome: FC = () => {
           // align="center"
           color={Color.Primary}
           margins={{marginTop: 30}}
-          font="Raleway-Bold">
+          font="Lato-Bold">
           Hey! Welcome
         </_Text>
         <_Text width={'70%'} align="center">
