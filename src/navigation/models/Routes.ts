@@ -3,9 +3,14 @@ type ScreensWithoutParams =
   | 'company-code'
   | 'login-screen'
   | 'code-verify-screen'
-  | 'home-screen';
+  | 'home-screen'
+  |'check-in-out-screen'
+  |'home'
+  | 'camera-screen'
+
 
 interface ScreensWithParams {
+  'send-checkin-screen':{image:any}
   //   'home-screen': { id: string; alt: boolean };
 }
 

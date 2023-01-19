@@ -1,49 +1,43 @@
-import React, { FC } from 'react';
-import { _View, _Text, _Icon, _Image } from 'components';
-import { Image, TouchableOpacity } from 'react-native';
-import { Color } from 'const';
-import { Fonts } from 'const/theme';
-import { useNavigation } from '@react-navigation/native';
-import { NavigationProps } from 'navigation';
+import React, {FC} from 'react';
+import {_View, _Text, _Icon, _Image, _Screen} from 'components';
+import {Image, TouchableOpacity, StatusBar} from 'react-native';
+import {Color} from 'const';
+import {Fonts} from 'const/theme';
+import {useNavigation} from '@react-navigation/native';
+import {NavigationProps} from 'navigation';
 
 interface Props {
   name: string;
   goBack: boolean;
 }
-export const _Header: FC<Props> = ({ name, goBack }) => {
+export const _Header: FC<Props> = ({name, goBack}) => {
   const navigation = useNavigation<NavigationProps>();
   return (
     <_View
-      paddings={{ paddingHorizontal: 20, paddingVertical: 5 }}
+      paddings={{paddingHorizontal: 10, paddingVertical: 5}}
+      style={{backgroundColor: Color.Primary, height: 84}}
       flexDirection={'row'}
-      justify={'space-between'}
-    >
-      {goBack ? (
-        <TouchableOpacity onPress={() => navigation.goBack()}>
-          <_Icon
-            family='Feather'
-            name='chevron-left'
-            color={Color.black}
-            size={30}
-          />
-        </TouchableOpacity>
-      ) : (
-        <TouchableOpacity>
-          <Image
-            source={require('assets/icons/hamburger.png')}
-            style={{ width: 25, height: 25 }}
-          />
-        </TouchableOpacity>
-      )}
-      <_Text font={Fonts.semibold} color={Color.Primary} size='med'>
+      align={'flex-end'}
+      justify={'space-between'}>
+      <StatusBar backgroundColor={Color.Primary} barStyle={'dark-content'} />
+
+      <TouchableOpacity onPress={() => navigation.goBack()}>
+        <_Icon
+          family="Feather"
+          name="chevron-left"
+          color={Color.White}
+          size={30}
+        />
+      </TouchableOpacity>
+
+      <_Text
+        style={{marginLeft: -25}}
+        font={Fonts.bold}
+        color={Color.White}
+        size="med">
         {name}
       </_Text>
-      <_Image
-        width={35}
-        height={35}
-        radius={18}
-        source={require('assets/images/profile.jpeg')}
-      />
+      <_View></_View>
     </_View>
   );
 };

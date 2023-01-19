@@ -12,13 +12,13 @@ const Drawer = createDrawerNavigator();
 export const DrawerNavigator: FC = () => {
   return (
     <Drawer.Navigator
-      initialRouteName="home"
+      initialRouteName="home-drawer"
       screenOptions={{
         headerShown: false,
         unmountOnBlur: true,
       }}
       drawerContent={() => <DrawerContent />}>
-      <Drawer.Screen name="home" component={AppNavigator} />
+      <Drawer.Screen name="home-drawer" component={AppNavigator} />
     </Drawer.Navigator>
   );
 };

@@ -1,8 +1,8 @@
-import React, { FC, useState } from 'react';
-import { _View, _Text, _Input, _Icon } from 'components';
-import { ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
-import { Color } from 'const';
-import { shadow } from 'global-styles';
+import React, {FC, useState} from 'react';
+import {_View, _Text, _Input, _Icon} from 'components';
+import {ScrollView, StyleSheet, TouchableOpacity} from 'react-native';
+import {Color} from 'const';
+import {shadow} from 'global-styles';
 
 interface EnumItem {
   name: string;
@@ -11,14 +11,14 @@ interface Props extends Array<EnumItem> {
   storeData: any;
   title: string;
 }
-export const _Dropdown: FC<Props> = ({ storeData, title }) => {
+export const _Dropdown: FC<Props> = ({storeData, title}) => {
   const [showDropdown, setShowdropdown] = useState<boolean>(false);
   const [stores, setStores] = useState<Array<EnumItem>>(storeData);
 
   const onSearch = (text: string) => {
     text.length > 0 ? setShowdropdown(true) : setShowdropdown(false);
     let results: Array<EnumItem> = storeData.filter(
-      (item: any) => item.name.toLowerCase().indexOf(text.toLowerCase()) > -1
+      (item: any) => item.name.toLowerCase().indexOf(text.toLowerCase()) > -1,
     );
     setStores(results);
   };
@@ -26,33 +26,29 @@ export const _Dropdown: FC<Props> = ({ storeData, title }) => {
   return (
     <_View>
       <_View width={'100%'}>
-        <_Input
-          placeholder={title}
-          defaultValue=''
-          style={styles.dropdown}
-          onChangeText={(text) => onSearch(text)}
-        />
         <TouchableOpacity
-          style={{ position: 'absolute', right: 20, top: 20 }}
-          onPress={() => setShowdropdown(!showDropdown)}
-        >
-          <_Icon
-            name={showDropdown ? 'up' : 'down'}
-            family='AntDesign'
-            color={Color.Primary}
-          />
+          style={styles.mainContainer}
+          onPress={() => setShowdropdown(!showDropdown)}>
+          <_Text>{title}</_Text>
+          <_View style={styles.downIcon}>
+            <_Icon
+              name={showDropdown ? 'up' : 'down'}
+              family="AntDesign"
+              color={Color.black}
+            />
+          </_View>
         </TouchableOpacity>
       </_View>
       {showDropdown && (
         <ScrollView style={styles.dropContainer}>
-          <_View style={{ marginBottom: 20, ...shadow, zIndex: 3 }}>
+          <_View style={{marginBottom: 20, ...shadow, zIndex: 3}}>
             {stores?.map((item, index) => (
               <TouchableOpacity key={index} style={styles.dropItem}>
                 <_Text>{item.name}</_Text>
               </TouchableOpacity>
             ))}
             {Boolean(stores.length <= 0) && (
-              <_Text style={{ marginTop: 10 }}>{'No Results Found'}</_Text>
+              <_Text style={{marginTop: 10}}>{'No Results Found'}</_Text>
             )}
           </_View>
         </ScrollView>
@@ -84,5 +80,23 @@ const styles = StyleSheet.create({
     paddingTop: 10,
     paddingBottom: 10,
     borderColor: Color.PrimaryLight,
+  },
+  mainContainer: {
+    width: '100%',
+    height: 50,
+    backgroundColor: Color.White,
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingLeft: 20,
+    borderRadius: 10,
+    ...shadow,
+  },
+  downIcon: {
+    width: 80,
+    height: '100%',
+    position: 'absolute',
+    alignItems: 'center',
+    justifyContent: 'center',
+    right: 1,
   },
 });

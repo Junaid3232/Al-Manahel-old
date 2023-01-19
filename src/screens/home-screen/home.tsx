@@ -43,6 +43,7 @@ export const Home: FC = () => {
     {
       name: 'Checkin & Checkout',
       description: `Employee can send checkin and checkout in spesific locations.`,
+      navigateTo: 'check-in-out-screen',
     },
   ];
   const getUrl = async () => {

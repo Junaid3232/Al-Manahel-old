@@ -113,8 +113,9 @@ const styles = StyleSheet.create({
     color: Color.Negative,
   },
   secondary: {
-    borderWidth: 0,
+    borderWidth: 1,
     backgroundColor: 'transparent',
+    borderColor: Color.Primary,
   },
   secondaryText: {
     color: Color.Primary,

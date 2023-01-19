@@ -1,17 +1,23 @@
 import React from 'react';
-import {StyleSheet} from 'react-native';
+import {StyleSheet, TouchableOpacity} from 'react-native';
 import {_Image, _Text, _Icon, _View} from 'components';
 import {Color} from 'const';
+import {NavigationProps} from 'navigation';
+import {useNavigation} from '@react-navigation/native';
 
 interface Props {
   item: {
     description: string;
     name: string;
+    onPress: any;
   };
 }
 export const HomeCard: React.FC<Props> = ({item}) => {
+  const navigation = useNavigation<NavigationProps>();
   return (
-    <_View style={styles.container}>
+    <TouchableOpacity
+      onPress={() => navigation.navigate(item?.navigateTo)}
+      style={styles.container}>
       <_View style={styles.iconStyles}>
         <_View style={styles.userImage}></_View>
         <_View flexDirection="row" width={'100%'}>
@@ -32,7 +38,7 @@ export const HomeCard: React.FC<Props> = ({item}) => {
           </_View>
         </_View>
       </_View>
-    </_View>
+    </TouchableOpacity>
   );
 };
 

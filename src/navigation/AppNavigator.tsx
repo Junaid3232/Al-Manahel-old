@@ -13,6 +13,12 @@ export const AppNavigator: FC = () => {
         gestureEnabled: false,
       }}>
       <Stack.Screen name="home" component={screens.Home} />
+      <Stack.Screen name="check-in-out-screen" component={screens.CheckInOut} />
+      <Stack.Screen name="camera-screen" component={screens.CameraScreen} />
+      <Stack.Screen
+        name="send-checkin-screen"
+        component={screens.SendCheckin}
+      />
     </Stack.Navigator>
   );
 };
