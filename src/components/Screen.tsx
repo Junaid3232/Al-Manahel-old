@@ -6,6 +6,7 @@ import {_View} from 'components';
 import {SafeAreaView} from 'react-native';
 
 interface OwnProps {
+  statusBarColor?:string;
   background?: JSX.Element;
   header?: JSX.Element;
   disableAndroidBack?: boolean;
@@ -44,6 +45,7 @@ export const _Screen: React.FC<Props> = ({
   statusBarType = 'dark-content',
   pageGuard,
   onAndroidBack,
+  statusBarColor='transparent',
   ...rest
 }) => {
   return (
@@ -52,7 +54,7 @@ export const _Screen: React.FC<Props> = ({
       {hideTopSafeArea && (
         <SafeAreaView style={{backgroundColor: topSafeAreaColor}} />
       )}
-      <StatusBar backgroundColor="transparent" barStyle={statusBarType} />
+      <StatusBar backgroundColor={statusBarColor} barStyle={statusBarType} />
       <_View
         align={align}
         justify={justify}
@@ -61,7 +63,7 @@ export const _Screen: React.FC<Props> = ({
           ...paddings,
           paddingTop:
             Platform.OS === 'android'
-              ? StatusBar.currentHeight || 24
+              ? 0 
               : paddings?.paddingTop,
         }}
         flex={1}

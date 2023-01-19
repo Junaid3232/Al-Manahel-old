@@ -9,35 +9,50 @@ import {NavigationProps} from 'navigation';
 interface Props {
   name: string;
   goBack: boolean;
+  iconRight?: boolean;
 }
-export const _Header: FC<Props> = ({name, goBack}) => {
+export const _Header: FC<Props> = ({name, goBack, iconRight}) => {
   const navigation = useNavigation<NavigationProps>();
   return (
     <_View
-      paddings={{paddingHorizontal: 10, paddingVertical: 5}}
-      style={{backgroundColor: Color.Primary, height: 84}}
-      flexDirection={'row'}
-      align={'flex-end'}
-      justify={'space-between'}>
-      <StatusBar backgroundColor={Color.Primary} barStyle={'dark-content'} />
-
-      <TouchableOpacity onPress={() => navigation.goBack()}>
-        <_Icon
-          family="Feather"
-          name="chevron-left"
-          color={Color.White}
-          size={30}
-        />
-      </TouchableOpacity>
-
-      <_Text
-        style={{marginLeft: -25}}
-        font={Fonts.bold}
-        color={Color.White}
-        size="med">
+      style={{
+        backgroundColor: Color.Primary,
+        justifyContent: 'space-between',
+        flexDirection: 'row',
+        paddingHorizontal: 20,
+        paddingVertical: 5,
+      }}>
+      {goBack ? (
+        <TouchableOpacity onPress={() => navigation.goBack()}>
+          <_Icon
+            family="Feather"
+            name="chevron-left"
+            color={Color.White}
+            size={30}
+          />
+        </TouchableOpacity>
+      ) : (
+        <TouchableOpacity>
+          <Image
+            source={require('assets/icons/hamburger.png')}
+            style={{width: 25, height: 25}}
+          />
+        </TouchableOpacity>
+      )}
+      <_Text font={Fonts.semibold} color={Color.White} size="med">
         {name}
       </_Text>
-      <_View></_View>
+      <TouchableOpacity style={{
+        width: 35, 
+        height: 35, 
+        borderRadius: 18,
+        justifyContent:'center',
+        alignItems:'center'
+        }}>
+        {iconRight ? (
+          <_Icon name="timer-outline" family="Ionicons" size={25} />
+        ) : null}
+      </TouchableOpacity>
     </_View>
   );
 };

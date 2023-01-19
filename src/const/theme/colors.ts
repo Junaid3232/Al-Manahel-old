@@ -19,4 +19,6 @@ export enum Color {
   MediumLite = '#ADB5BD',
   White = '#FFFFFF',
   black = '#111111',
+  darkBlack='black',
+  LanguageChange='#0B449D'
 }

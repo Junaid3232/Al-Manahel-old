@@ -7,7 +7,7 @@ type ScreensWithoutParams =
   |'check-in-out-screen'
   |'home'
   | 'camera-screen'
-
+  | 'setting';
 
 interface ScreensWithParams {
   'send-checkin-screen':{image:any}

@@ -85,7 +85,7 @@ export const DrawerContent: FC = () => {
                 fontFamily: Fonts.medium,
               },
             ]}
-            onPress={() => navigation.navigate('Dashboard')}
+            onPress={() => navigation.navigate('setting')}
           />
           <DrawerItem
             pressColor={Color.Secondary}
