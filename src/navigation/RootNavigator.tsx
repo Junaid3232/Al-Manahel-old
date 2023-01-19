@@ -2,7 +2,6 @@ import React, {FC} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {AuthNavigator} from './AuthNavigator';
-import {AppNavigator} from './AppNavigator';
 import {Splash, Terms} from '../screens';
 import {DrawerNavigator} from './drawer-navigation';
 

@@ -1,6 +1,3 @@
 export * from './login-screen';
-export * from './login-screen';
-
-export * from './welcome';
-export * from './onBoarding';
+export * from './company-code-screen'
 export * from './code-verify-screen';
